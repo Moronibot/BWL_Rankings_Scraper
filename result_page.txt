@@ -1,0 +1,1974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="google-translate-customization" content="b6d3919a2adc34e9-77c25de6a29852fa-g4b95804d2fd00c66-14"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1"/>
+    <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0"> -->
+    <title>Sport:80 | Investing in Sport</title>
+
+    <meta property="og:url" content="https://bwl.sport80.com/login"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="British Weight Lifting"/>
+    <meta property="og:description" content="British Weight Lifting's membership and events platform, powered by Sport:80"/>
+    <meta property="og:image" content="https://d7skausf3l8pb.cloudfront.net/branding/a4b33854-d5b5-416b-8e9e-8cab86a792c8/29b82f396ddf6e889fc2b5bf002d1855-5f92851e9422e016457665.png"/>
+    <meta property="og:image:secure_url" content="https://d7skausf3l8pb.cloudfront.net/branding/a4b33854-d5b5-416b-8e9e-8cab86a792c8/29b82f396ddf6e889fc2b5bf002d1855-5f92851e9422e016457665.png"/>
+
+    <!-- start: Favicon -->
+    <link rel="shortcut icon" href="https://bwl.sport80.com/assets/2/img/s80_globe.png">
+    <!-- end: Favicon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.8.55/css/materialdesignicons.min.css" integrity="sha512-x96qcyADhiw/CZY7QLOo7dB8i/REOEHZDhNfoDuJlyQ+yZzhdy91eAa4EkO7g3egt8obvLeJPoUKEKu5C5JYjA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+        <link rel="stylesheet" type="text/css" href="https://bwl.sport80.com/assets/2/build/css/style.min.css?apx=105" media="all">
+
+        <style type="text/css">
+        @media (max-width: 800px) {
+            .login .site-background, .site-maintenance .site-background {
+                background-image: url('https://d7skausf3l8pb.cloudfront.net/branding/a4b33854-d5b5-416b-8e9e-8cab86a792c8/4c2493b10b4740c0a6e8d33e83039932-5f92851ec5e4d631314071.jpg');
+            }
+        }
+
+        @media (max-width: 1200px) and (min-width: 801px) {
+            .login .site-background, .site-maintenance .site-background {
+                background-image: url('https://d7skausf3l8pb.cloudfront.net/branding/a4b33854-d5b5-416b-8e9e-8cab86a792c8/aed5e82c9b4fddcd6199002cabd23860-5f92851ecd134713451135.jpg');
+            }
+        }
+
+        @media (min-width: 1201px) {
+            .login .site-background, .site-maintenance .site-background {
+                background-image: url('https://d7skausf3l8pb.cloudfront.net/branding/a4b33854-d5b5-416b-8e9e-8cab86a792c8/887f0c6b5f6470f0481470accc1f9d3b-5f92851edb280120965033.jpg');
+            }
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.css" integrity="sha512-vOPZ9AhlGpjAMDKyWdI5uxpV6+SGS1ClIYK9aRnV+3FuWAl//ebp07P5rF5ttOs0/smr4G+cPkXXYZ94ZK5U8A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--[if lt IE 10 ]>
+    <link id="ie-style" href="https://bwl.sport80.com/assets/2/css/reset.css" rel="stylesheet">
+    <link id="ie-style" href="https://bwl.sport80.com/assets/2/css/bootstrap.min.css" rel="stylesheet">
+    <link id="ie-style" href="https://bwl.sport80.com/assets/2/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link id="ie-style" href="https://bwl.sport80.com/assets/2/css/font-awesome.min.css" rel="stylesheet">
+    <link id="ie-style" href="https://bwl.sport80.com/assets/2/css/chosen.css" rel="stylesheet">
+    <link id="ie-style" href="https://bwl.sport80.com/assets/2/css/component.css" rel="stylesheet">
+    <link id="ie-style" href="https://bwl.sport80.com/assets/2/css/uniform.default.css" rel="stylesheet">
+    <link id="ie-style" href="https://bwl.sport80.com/assets/2/css/style.css" rel="stylesheet">
+    <link id="ie-style" href="https://bwl.sport80.com/assets/2/css/style-responsive.css" rel="stylesheet">
+    <link id="ie-style" href="https://bwl.sport80.com/assets/2/css/zendesk.css" rel="stylesheet">
+    <link id="ie-style" href="https://bwl.sport80.com/assets/2/css/intlTelInput.css" rel="stylesheet">
+    <link id="ie-style" href="https://bwl.sport80.com/assets/2/css/jquery.wysiwyg.css" rel="stylesheet">
+    <link id="ie-style" href="https://bwl.sport80.com/assets/2/css/dataTables.css" rel="stylesheet">
+    <link id="ie-style" href="https://bwl.sport80.com/assets/2/css/opentip.css" rel="stylesheet">
+    <link id="ie-style" href="https://bwl.sport80.com/assets/2/css/site.css" rel="stylesheet">
+    <link id="ie-style" href="https://bwl.sport80.com/assets/2/css/mobile.css" rel="stylesheet">
+    <link id="ie-style" href="https://bwl.sport80.com/assets/2/css/960.css" rel="stylesheet">
+    <link id="ie-style" href="https://bwl.sport80.com/assets/2/css/pikaday.css" rel="stylesheet">
+    <link id="ie-style" href="https://bwl.sport80.com/assets/2/css/site_lt_ie9.css" rel="stylesheet">
+    <link id="ie-style" href="https://bwl.sport80.com/assets/2/css/pwstrength.css" rel="stylesheet">
+    <![endif]-->
+
+    <!-- end: CSS -->
+
+    <script type="text/javascript" language="javascript">
+        var config = {
+            site_url: "https://bwl.sport80.com/",
+            asset_url: "https://bwl.sport80.com/assets/2/",
+            force_reload: false,
+            ajaxRunning: [],
+            primary_colour: "#0D1C3D",
+            secondary_colour: "#92192D",
+        };
+    </script>
+
+    <script type="text/javascript" src="https://bwl.sport80.com/assets/2/build/js/app.min.js?apx=105"></script>
+
+    <script type="text/javascript" language="javascript">
+        var chosen_config = {
+            '.chosen-select': {},
+            '.chosen-select-deselect': {allow_single_deselect: true},
+            '.chosen-select-no-single': {disable_search_threshold: 10},
+            '.chosen-select-no-results': {no_results_text: 'Oops, nothing found!'},
+            '.chosen-select-width': {width: "95%"}
+        };
+
+        for (var selector in chosen_config) {
+            $(selector).chosen(chosen_config[selector]);
+        }
+    </script>
+            <!-- Start of sport80 Zendesk Widget script -->
+        <!--        <script>/*<![CDATA[*/-->
+        <!--            window.zEmbed || function (e, t) {-->
+        <!--                var n, o, d, i, s, a = [], r = document.createElement("iframe");-->
+        <!--                window.zEmbed = function () {-->
+        <!--                    a.push(arguments)-->
+        <!--                }, window.zE = window.zE || window.zEmbed, r.src = "javascript:false", r.title = "", r.role = "presentation", (r.frameElement || r).style.cssText = "display: none", d = document.getElementsByTagName("script"), d = d[d.length - 1], d.parentNode.insertBefore(r, d), i = r.contentWindow, s = i.document;-->
+        <!--                try {-->
+        <!--                    o = s-->
+        <!--                } catch (c) {-->
+        <!--                    n = document.domain, r.src = 'javascript:var d=document.open();d.domain="' + n + '";void(0);', o = s-->
+        <!--                }-->
+        <!--                o.open()._l = function () {-->
+        <!--                    var o = this.createElement("script");-->
+        <!--                    n && (this.domain = n), o.id = "js-iframe-async", o.src = e, this.t = +new Date, this.zendeskHost = t, this.zEQueue = a, this.body.appendChild(o)-->
+        <!--                }, o.write('<body onload="document._l();">'), o.close();-->
+        <!--                zE(function() {-->
+        <!--                    zE.hide();-->
+        <!--                });-->
+        <!--            }("https://assets.zendesk.com/embeddable_framework/main.js", config.zendesk_domain);-->
+        <!--            /*]]>*/</script>-->
+        <!--        End of sport80 Zendesk Widget script -->
+        <div id="fb-root"></div>
+        <script>(function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+
+    <!--         <script>
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-58279837-1']);
+            _gaq.push(['_setDomainName', 'sport80.com']);
+            _gaq.push(['_trackPageview']);
+
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('set', 'anonymizeIp', true);
+            ga('create', 'UA-58279837-1', 'auto');
+            ga('send', 'pageview');
+        </script> -->
+            <script src='https://www.google.com/recaptcha/api.js' type="application/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.5.3/ckeditor.js" integrity="sha512-8JVzcbEY/QdknBKMQ4e9erXqq28Q+ppbVPjRTs+pLny2CSEuDby0B+0YZLGRSUrdF77X6MtYH2mgrLpx1RDJxA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://js.stripe.com/v3/" type="application/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.min.js" integrity="sha512-JH2s8p8FjQNpNfXAHJgn45yqo1lDeBpDgV81OTo0qa4e7qRdyuFVi+BIK4o1zFdtXYUbbN9ofdcKp0JsoVGvgQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cc.cdn.civiccomputing.com/9/cookieControl-9.x.min.js" type="text/javascript"></script>
+    </head>
+
+<div id="full-black-overlay" class="hide"></div>
+<div id="full-white-overlay" class="hide"></div>
+<div class="site-background"></div>
+
+<div id="popup-container">
+    <div class="background"></div>
+    <div class="pu_content s80-form-container">
+        <!-- <img src="https://bwl.sport80.com/assets/2/img/close_cross.png"
+             class="close-btn">
+        <div class="close-btn">X</div> -->
+        <button type="button" class="close-btn v-btn v-btn--flat v-btn--icon v-btn--round theme--light v-size--large">
+            <span class="v-btn__content"><i aria-hidden="true"
+                                            class="v-icon notranslate mdi mdi-close-circle theme--light"></i></span>
+        </button>
+        <div class="html"></div>
+    </div>
+</div>
+<div id="main-messages">
+    <div class="alert alert-success hide">
+        <a class="close">x</a>
+        <span class="msg"></span>
+    </div>
+
+    <div class="alert alert-error hide">
+        <a class="close">x</a>
+        <span class="msg"></span>
+    </div>
+</div>
+
+
+<link href="https://unpkg.com/vuetify@2.1.10/dist/vuetify.css" rel="stylesheet">
+
+<body class="login">
+
+<noscript>
+    <div id="full-black-overlay"></div>
+    <div id="no-js-message">
+        <h2 class="alert-heading">Sorry!</h2>
+        <p>You need to have <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a> enabled to use this site.</p>
+    </div>
+</noscript>
+
+<input id="reloadValue" type="hidden" name="reloadValue" value=""/>
+<!-- <div class="container-fluid">
+    <div class="row-fluid">
+        <div class="row-fluid"> -->
+            <div id="public-results" class="loginbox">
+                <!-- <div class="s80-form-container"> -->
+                <div class="loginWrap">
+<!--                    <a id="public-support"onclick="open_support()"> <i class="fa fa fa-life-ring"></i> <p>Support</p> </a>-->
+                    <!--                         <a id="public-support"
+                           href="https://bwl.sport80.com/support/front_panel" data-callback="bind_frontend_support"
+                           class="top-nav-button-small float-left pop_up">
+                            <i class="fa fa fa-life-ring"></i>
+                            <p>Support</p>
+                        </a>
+                     -->
+
+                    <!--                         <div class="header">
+                            <h1 class="title">Fylde Coast Weightlifting Open 2021 - Tier 3 - 03/10/2021</h1>
+                            <div class="icons float-right">
+                                <a href="https://bwl.sport80.com/"><i class="fa fa-home white"></i></a>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                     -->
+
+                    <div class="loginLogo center">
+                        <a href="https://bwl.sport80.com/login">
+                                                    <img src="https://d7skausf3l8pb.cloudfront.net/branding/a4b33854-d5b5-416b-8e9e-8cab86a792c8/29b82f396ddf6e889fc2b5bf002d1855-5f92851e9422e016457665.png" style="max-width:240px; max-height:130px; " class="mgn-bot-20"  >                                                </a>
+                    </div>
+
+                    
+
+                    <div id="main-messages">
+    <div class="alert alert-success hide">
+        <a class="close">x</a>
+        <span class="msg"></span>
+    </div>
+
+    <div class="alert alert-error hide">
+        <a class="close">x</a>
+        <span class="msg"></span>
+    </div>
+</div>
+<script type="application/javascript">
+    config.results_url = "https://bwl.sport80.com/event_results?id_ranking=8";
+    $(document).ready(function() {
+        var $container = $('#public-results');
+        create_default_data_table($container, $container.find('table'));
+        $container.find('.view').click(function(){
+            var resource = $(this).attr('data-id-resource');
+            url = add_param_to_url(config.results_url, 'resource', resource);
+            load_page(url, true);
+        });
+    });
+</script>
+<div class="btnContainer align-right pad-bot-40">
+    <a href="https://bwl.sport80.com/login" class="v-btn v-btn--depressed v-btn--flat v-btn--outlined v-btn--router theme--light v-size--default primary--text" title="Login">LOGIN</a>
+</div>
+
+
+    <table id="ranking-matches" class="table full-table
+            table-bordered border-bottom            data-table                                                            "
+           data-search-name="Results"
+                    >
+                    <thead>
+            <tr>
+                                                    <th>Event</th>
+                                    <th>Date</th>
+                                    <th>Center Referee</th>
+                                    <th>Age Category</th>
+                                    <th>Lifter</th>
+                                    <th>Body Weight (Kg)</th>
+                                    <th>Snatch Lift 1</th>
+                                    <th>Snatch Lift 2</th>
+                                    <th>Snatch Lift 3</th>
+                                    <th>C&J Lift 1</th>
+                                    <th>C&J Lift 2</th>
+                                    <th>C&J Lift 3</th>
+                                    <th>Total</th>
+                                    <th>Sinclair</th>
+                            </tr>
+            </thead>
+                <tbody>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Caroline Buckle                    </td>
+                
+                    <td                         >
+                        Men's Junior Under 20 73Kg                    </td>
+                
+                    <td                         >
+                        matthew tonge                    </td>
+                
+                    <td                         >
+                        70.90                    </td>
+                
+                    <td                         >
+                        85                    </td>
+                
+                    <td                         >
+                        90                    </td>
+                
+                    <td                         >
+                        -94                    </td>
+                
+                    <td                         >
+                        110                    </td>
+                
+                    <td                         >
+                        -114                    </td>
+                
+                    <td                         >
+                        114                    </td>
+                
+                    <td                         >
+                        204                    </td>
+                
+                    <td                         >
+                        267                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Caroline Buckle                    </td>
+                
+                    <td                         >
+                        Men's Junior Under 20 96Kg                    </td>
+                
+                    <td                         >
+                        George Brown                    </td>
+                
+                    <td                         >
+                        94.20                    </td>
+                
+                    <td                         >
+                        85                    </td>
+                
+                    <td                         >
+                        -88                    </td>
+                
+                    <td                         >
+                        -89                    </td>
+                
+                    <td                         >
+                        100                    </td>
+                
+                    <td                         >
+                        105                    </td>
+                
+                    <td                         >
+                        -110                    </td>
+                
+                    <td                         >
+                        190                    </td>
+                
+                    <td                         >
+                        216                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Caroline Buckle                    </td>
+                
+                    <td                         >
+                        Men's Junior Under 20 102Kg                    </td>
+                
+                    <td                         >
+                        Oliver Godwin                    </td>
+                
+                    <td                         >
+                        100.80                    </td>
+                
+                    <td                         >
+                        100                    </td>
+                
+                    <td                         >
+                        104                    </td>
+                
+                    <td                         >
+                        -107                    </td>
+                
+                    <td                         >
+                        120                    </td>
+                
+                    <td                         >
+                        125                    </td>
+                
+                    <td                         >
+                        130                    </td>
+                
+                    <td                         >
+                        234                    </td>
+                
+                    <td                         >
+                        259                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Caroline Buckle                    </td>
+                
+                    <td                         >
+                        Men's Masters (35-39) 96Kg                    </td>
+                
+                    <td                         >
+                        Liam Snape                    </td>
+                
+                    <td                         >
+                        95.30                    </td>
+                
+                    <td                         >
+                        -82                    </td>
+                
+                    <td                         >
+                        82                    </td>
+                
+                    <td                         >
+                        85                    </td>
+                
+                    <td                         >
+                        105                    </td>
+                
+                    <td                         >
+                        110                    </td>
+                
+                    <td                         >
+                        115                    </td>
+                
+                    <td                         >
+                        200                    </td>
+                
+                    <td                         >
+                        226                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Caroline Buckle                    </td>
+                
+                    <td                         >
+                        Men's Senior 67Kg                    </td>
+                
+                    <td                         >
+                        Piyush Pandey                    </td>
+                
+                    <td                         >
+                        66.00                    </td>
+                
+                    <td                         >
+                        83                    </td>
+                
+                    <td                         >
+                        -86                    </td>
+                
+                    <td                         >
+                        86                    </td>
+                
+                    <td                         >
+                        110                    </td>
+                
+                    <td                         >
+                        115                    </td>
+                
+                    <td                         >
+                        -118                    </td>
+                
+                    <td                         >
+                        201                    </td>
+                
+                    <td                         >
+                        275                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Caroline Buckle                    </td>
+                
+                    <td                         >
+                        Men's Senior 67Kg                    </td>
+                
+                    <td                         >
+                        Kieran Hart                    </td>
+                
+                    <td                         >
+                        66.40                    </td>
+                
+                    <td                         >
+                        -80                    </td>
+                
+                    <td                         >
+                        -80                    </td>
+                
+                    <td                         >
+                        80                    </td>
+                
+                    <td                         >
+                        110                    </td>
+                
+                    <td                         >
+                        112                    </td>
+                
+                    <td                         >
+                        -115                    </td>
+                
+                    <td                         >
+                        192                    </td>
+                
+                    <td                         >
+                        261                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Nicole Booth                    </td>
+                
+                    <td                         >
+                        Men's Senior 89Kg                    </td>
+                
+                    <td                         >
+                        Jake Benson                    </td>
+                
+                    <td                         >
+                        86.00                    </td>
+                
+                    <td                         >
+                        90                    </td>
+                
+                    <td                         >
+                        94                    </td>
+                
+                    <td                         >
+                        -97                    </td>
+                
+                    <td                         >
+                        122                    </td>
+                
+                    <td                         >
+                        126                    </td>
+                
+                    <td                         >
+                        130                    </td>
+                
+                    <td                         >
+                        224                    </td>
+                
+                    <td                         >
+                        264                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Caroline Buckle                    </td>
+                
+                    <td                         >
+                        Men's Senior 102Kg                    </td>
+                
+                    <td                         >
+                        Sven Batke                    </td>
+                
+                    <td                         >
+                        99.90                    </td>
+                
+                    <td                         >
+                        92                    </td>
+                
+                    <td                         >
+                        95                    </td>
+                
+                    <td                         >
+                        100                    </td>
+                
+                    <td                         >
+                        106                    </td>
+                
+                    <td                         >
+                        110                    </td>
+                
+                    <td                         >
+                        115                    </td>
+                
+                    <td                         >
+                        215                    </td>
+                
+                    <td                         >
+                        238                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Caroline Buckle                    </td>
+                
+                    <td                         >
+                        Men's Under 23 109Kg                    </td>
+                
+                    <td                         >
+                        Harrison Steele                    </td>
+                
+                    <td                         >
+                        107.50                    </td>
+                
+                    <td                         >
+                        101                    </td>
+                
+                    <td                         >
+                        105                    </td>
+                
+                    <td                         >
+                        -108                    </td>
+                
+                    <td                         >
+                        130                    </td>
+                
+                    <td                         >
+                        135                    </td>
+                
+                    <td                         >
+                        142                    </td>
+                
+                    <td                         >
+                        247                    </td>
+                
+                    <td                         >
+                        267                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Caroline Buckle                    </td>
+                
+                    <td                         >
+                        Men's Youth Under 15 55Kg                    </td>
+                
+                    <td                         >
+                        Finlay Brooks                    </td>
+                
+                    <td                         >
+                        54.10                    </td>
+                
+                    <td                         >
+                        40                    </td>
+                
+                    <td                         >
+                        43                    </td>
+                
+                    <td                         >
+                        -45                    </td>
+                
+                    <td                         >
+                        53                    </td>
+                
+                    <td                         >
+                        56                    </td>
+                
+                    <td                         >
+                        -60                    </td>
+                
+                    <td                         >
+                        99                    </td>
+                
+                    <td                         >
+                        156                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Caroline Buckle                    </td>
+                
+                    <td                         >
+                        Men's Youth Under 15 61Kg                    </td>
+                
+                    <td                         >
+                        Alex Stockton-Hine                    </td>
+                
+                    <td                         >
+                        60.30                    </td>
+                
+                    <td                         >
+                        48                    </td>
+                
+                    <td                         >
+                        51                    </td>
+                
+                    <td                         >
+                        55                    </td>
+                
+                    <td                         >
+                        65                    </td>
+                
+                    <td                         >
+                        69                    </td>
+                
+                    <td                         >
+                        72                    </td>
+                
+                    <td                         >
+                        127                    </td>
+                
+                    <td                         >
+                        184                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Caroline Buckle                    </td>
+                
+                    <td                         >
+                        Men's Youth Under 15 61Kg                    </td>
+                
+                    <td                         >
+                        Aiden Leigh                    </td>
+                
+                    <td                         >
+                        56.30                    </td>
+                
+                    <td                         >
+                        47                    </td>
+                
+                    <td                         >
+                        -49                    </td>
+                
+                    <td                         >
+                        49                    </td>
+                
+                    <td                         >
+                        58                    </td>
+                
+                    <td                         >
+                        61                    </td>
+                
+                    <td                         >
+                        67                    </td>
+                
+                    <td                         >
+                        116                    </td>
+                
+                    <td                         >
+                        177                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Caroline Buckle                    </td>
+                
+                    <td                         >
+                        Men's Youth Under 15 67Kg                    </td>
+                
+                    <td                         >
+                        Rory Baker                    </td>
+                
+                    <td                         >
+                        65.50                    </td>
+                
+                    <td                         >
+                        55                    </td>
+                
+                    <td                         >
+                        58                    </td>
+                
+                    <td                         >
+                        61                    </td>
+                
+                    <td                         >
+                        67                    </td>
+                
+                    <td                         >
+                        71                    </td>
+                
+                    <td                         >
+                        75                    </td>
+                
+                    <td                         >
+                        136                    </td>
+                
+                    <td                         >
+                        187                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Caroline Buckle                    </td>
+                
+                    <td                         >
+                        Men's Youth Under 17 73Kg                    </td>
+                
+                    <td                         >
+                        Blayke Fisher                    </td>
+                
+                    <td                         >
+                        69.80                    </td>
+                
+                    <td                         >
+                        48                    </td>
+                
+                    <td                         >
+                        -51                    </td>
+                
+                    <td                         >
+                        52                    </td>
+                
+                    <td                         >
+                        67                    </td>
+                
+                    <td                         >
+                        70                    </td>
+                
+                    <td                         >
+                        73                    </td>
+                
+                    <td                         >
+                        125                    </td>
+                
+                    <td                         >
+                        165                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Caroline Buckle                    </td>
+                
+                    <td                         >
+                        Men's Youth Under 17 81Kg                    </td>
+                
+                    <td                         >
+                        Frankie Williams                    </td>
+                
+                    <td                         >
+                        80.20                    </td>
+                
+                    <td                         >
+                        104                    </td>
+                
+                    <td                         >
+                        -107                    </td>
+                
+                    <td                         >
+                        107                    </td>
+                
+                    <td                         >
+                        118                    </td>
+                
+                    <td                         >
+                        -122                    </td>
+                
+                    <td                         >
+                        122                    </td>
+                
+                    <td                         >
+                        229                    </td>
+                
+                    <td                         >
+                        280                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Caroline Buckle                    </td>
+                
+                    <td                         >
+                        Men's Youth Under 17 102+Kg                    </td>
+                
+                    <td                         >
+                        David Smith                    </td>
+                
+                    <td                         >
+                        130.30                    </td>
+                
+                    <td                         >
+                        108                    </td>
+                
+                    <td                         >
+                        111                    </td>
+                
+                    <td                         >
+                        115                    </td>
+                
+                    <td                         >
+                        136                    </td>
+                
+                    <td                         >
+                        141                    </td>
+                
+                    <td                         >
+                        150                    </td>
+                
+                    <td                         >
+                        265                    </td>
+                
+                    <td                         >
+                        273                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Nicole Booth                    </td>
+                
+                    <td                         >
+                        Women's Junior Under 20 49Kg                    </td>
+                
+                    <td                         >
+                        Faye Briggs                    </td>
+                
+                    <td                         >
+                        47.90                    </td>
+                
+                    <td                         >
+                        33                    </td>
+                
+                    <td                         >
+                        37                    </td>
+                
+                    <td                         >
+                        40                    </td>
+                
+                    <td                         >
+                        40                    </td>
+                
+                    <td                         >
+                        45                    </td>
+                
+                    <td                         >
+                        50                    </td>
+                
+                    <td                         >
+                        90                    </td>
+                
+                    <td                         >
+                        143                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Nicole Booth                    </td>
+                
+                    <td                         >
+                        Women's Masters (35-39) 49Kg                    </td>
+                
+                    <td                         >
+                        Lenka Pilnikova                    </td>
+                
+                    <td                         >
+                        48.60                    </td>
+                
+                    <td                         >
+                        27                    </td>
+                
+                    <td                         >
+                        30                    </td>
+                
+                    <td                         >
+                        33                    </td>
+                
+                    <td                         >
+                        -39                    </td>
+                
+                    <td                         >
+                        39                    </td>
+                
+                    <td                         >
+                        -42                    </td>
+                
+                    <td                         >
+                        72                    </td>
+                
+                    <td                         >
+                        113                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Nicole Booth                    </td>
+                
+                    <td                         >
+                        Women's Masters (35-39) 64Kg                    </td>
+                
+                    <td                         >
+                        Rebecca Cheslett                    </td>
+                
+                    <td                         >
+                        63.00                    </td>
+                
+                    <td                         >
+                        53                    </td>
+                
+                    <td                         >
+                        55                    </td>
+                
+                    <td                         >
+                        57                    </td>
+                
+                    <td                         >
+                        71                    </td>
+                
+                    <td                         >
+                        74                    </td>
+                
+                    <td                         >
+                        76                    </td>
+                
+                    <td                         >
+                        133                    </td>
+                
+                    <td                         >
+                        174                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Nicole Booth                    </td>
+                
+                    <td                         >
+                        Women's Masters (35-39) 87Kg                    </td>
+                
+                    <td                         >
+                        Swati Tiwary                    </td>
+                
+                    <td                         >
+                        86.80                    </td>
+                
+                    <td                         >
+                        40                    </td>
+                
+                    <td                         >
+                        43                    </td>
+                
+                    <td                         >
+                        -46                    </td>
+                
+                    <td                         >
+                        55                    </td>
+                
+                    <td                         >
+                        58                    </td>
+                
+                    <td                         >
+                        61                    </td>
+                
+                    <td                         >
+                        104                    </td>
+                
+                    <td                         >
+                        116                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Nicole Booth                    </td>
+                
+                    <td                         >
+                        Women's Masters (45-49) 81Kg                    </td>
+                
+                    <td                         >
+                        Joanne Heller                    </td>
+                
+                    <td                         >
+                        79.60                    </td>
+                
+                    <td                         >
+                        44                    </td>
+                
+                    <td                         >
+                        47                    </td>
+                
+                    <td                         >
+                        -50                    </td>
+                
+                    <td                         >
+                        53                    </td>
+                
+                    <td                         >
+                        57                    </td>
+                
+                    <td                         >
+                        -60                    </td>
+                
+                    <td                         >
+                        104                    </td>
+                
+                    <td                         >
+                        120                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Nicole Booth                    </td>
+                
+                    <td                         >
+                        Women's Senior 59Kg                    </td>
+                
+                    <td                         >
+                        Hannah Rutherford                    </td>
+                
+                    <td                         >
+                        58.30                    </td>
+                
+                    <td                         >
+                        47                    </td>
+                
+                    <td                         >
+                        50                    </td>
+                
+                    <td                         >
+                        -52                    </td>
+                
+                    <td                         >
+                        65                    </td>
+                
+                    <td                         >
+                        68                    </td>
+                
+                    <td                         >
+                        71                    </td>
+                
+                    <td                         >
+                        121                    </td>
+                
+                    <td                         >
+                        167                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Nicole Booth                    </td>
+                
+                    <td                         >
+                        Women's Senior 64Kg                    </td>
+                
+                    <td                         >
+                        Holly Morton                    </td>
+                
+                    <td                         >
+                        63.20                    </td>
+                
+                    <td                         >
+                        50                    </td>
+                
+                    <td                         >
+                        53                    </td>
+                
+                    <td                         >
+                        55                    </td>
+                
+                    <td                         >
+                        70                    </td>
+                
+                    <td                         >
+                        73                    </td>
+                
+                    <td                         >
+                        76                    </td>
+                
+                    <td                         >
+                        131                    </td>
+                
+                    <td                         >
+                        171                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Nicole Booth                    </td>
+                
+                    <td                         >
+                        Women's Senior 64Kg                    </td>
+                
+                    <td                         >
+                        Tamzin Owen                    </td>
+                
+                    <td                         >
+                        62.90                    </td>
+                
+                    <td                         >
+                        45                    </td>
+                
+                    <td                         >
+                        -48                    </td>
+                
+                    <td                         >
+                        48                    </td>
+                
+                    <td                         >
+                        55                    </td>
+                
+                    <td                         >
+                        58                    </td>
+                
+                    <td                         >
+                        61                    </td>
+                
+                    <td                         >
+                        109                    </td>
+                
+                    <td                         >
+                        143                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Nicole Booth                    </td>
+                
+                    <td                         >
+                        Women's Senior 71Kg                    </td>
+                
+                    <td                         >
+                        Jennifer Potter                    </td>
+                
+                    <td                         >
+                        67.40                    </td>
+                
+                    <td                         >
+                        67                    </td>
+                
+                    <td                         >
+                        71                    </td>
+                
+                    <td                         >
+                        -74                    </td>
+                
+                    <td                         >
+                        90                    </td>
+                
+                    <td                         >
+                        94                    </td>
+                
+                    <td                         >
+                        -96                    </td>
+                
+                    <td                         >
+                        165                    </td>
+                
+                    <td                         >
+                        208                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Nicole Booth                    </td>
+                
+                    <td                         >
+                        Women's Senior 76Kg                    </td>
+                
+                    <td                         >
+                        Georgia Miskelly                    </td>
+                
+                    <td                         >
+                        74.70                    </td>
+                
+                    <td                         >
+                        31                    </td>
+                
+                    <td                         >
+                        33                    </td>
+                
+                    <td                         >
+                        35                    </td>
+                
+                    <td                         >
+                        41                    </td>
+                
+                    <td                         >
+                        43                    </td>
+                
+                    <td                         >
+                        45                    </td>
+                
+                    <td                         >
+                        80                    </td>
+                
+                    <td                         >
+                        95                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Nicole Booth                    </td>
+                
+                    <td                         >
+                        Women's Senior 87Kg                    </td>
+                
+                    <td                         >
+                        Laura Dearman                    </td>
+                
+                    <td                         >
+                        84.80                    </td>
+                
+                    <td                         >
+                        52                    </td>
+                
+                    <td                         >
+                        -56                    </td>
+                
+                    <td                         >
+                        56                    </td>
+                
+                    <td                         >
+                        60                    </td>
+                
+                    <td                         >
+                        65                    </td>
+                
+                    <td                         >
+                        70                    </td>
+                
+                    <td                         >
+                        126                    </td>
+                
+                    <td                         >
+                        142                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Nicole Booth                    </td>
+                
+                    <td                         >
+                        Women's Under 23 59Kg                    </td>
+                
+                    <td                         >
+                        Olivia Brunskill                    </td>
+                
+                    <td                         >
+                        55.20                    </td>
+                
+                    <td                         >
+                        33                    </td>
+                
+                    <td                         >
+                        34                    </td>
+                
+                    <td                         >
+                        36                    </td>
+                
+                    <td                         >
+                        45                    </td>
+                
+                    <td                         >
+                        -48                    </td>
+                
+                    <td                         >
+                        48                    </td>
+                
+                    <td                         >
+                        84                    </td>
+                
+                    <td                         >
+                        120                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Nicole Booth                    </td>
+                
+                    <td                         >
+                        Women's Under 23 64Kg                    </td>
+                
+                    <td                         >
+                        Eunice Xu                    </td>
+                
+                    <td                         >
+                        61.20                    </td>
+                
+                    <td                         >
+                        40                    </td>
+                
+                    <td                         >
+                        45                    </td>
+                
+                    <td                         >
+                        -50                    </td>
+                
+                    <td                         >
+                        55                    </td>
+                
+                    <td                         >
+                        60                    </td>
+                
+                    <td                         >
+                        -65                    </td>
+                
+                    <td                         >
+                        105                    </td>
+                
+                    <td                         >
+                        140                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Nicole Booth                    </td>
+                
+                    <td                         >
+                        Women's Under 23 71Kg                    </td>
+                
+                    <td                         >
+                        Grace Batey                    </td>
+                
+                    <td                         >
+                        66.70                    </td>
+                
+                    <td                         >
+                        59                    </td>
+                
+                    <td                         >
+                        62                    </td>
+                
+                    <td                         >
+                        65                    </td>
+                
+                    <td                         >
+                        75                    </td>
+                
+                    <td                         >
+                        79                    </td>
+                
+                    <td                         >
+                        -83                    </td>
+                
+                    <td                         >
+                        144                    </td>
+                
+                    <td                         >
+                        183                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Nicole Booth                    </td>
+                
+                    <td                         >
+                        Women's Youth Under 15 40Kg                    </td>
+                
+                    <td                         >
+                        Tiffany Pilnikova                    </td>
+                
+                    <td                         >
+                        39.00                    </td>
+                
+                    <td                         >
+                        27                    </td>
+                
+                    <td                         >
+                        30                    </td>
+                
+                    <td                         >
+                        33                    </td>
+                
+                    <td                         >
+                        39                    </td>
+                
+                    <td                         >
+                        41                    </td>
+                
+                    <td                         >
+                        43                    </td>
+                
+                    <td                         >
+                        76                    </td>
+                
+                    <td                         >
+                        144                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Nicole Booth                    </td>
+                
+                    <td                         >
+                        Women's Youth Under 15 55Kg                    </td>
+                
+                    <td                         >
+                        Lucy Montgomery                    </td>
+                
+                    <td                         >
+                        53.10                    </td>
+                
+                    <td                         >
+                        22                    </td>
+                
+                    <td                         >
+                        -25                    </td>
+                
+                    <td                         >
+                        25                    </td>
+                
+                    <td                         >
+                        32                    </td>
+                
+                    <td                         >
+                        34                    </td>
+                
+                    <td                         >
+                        36                    </td>
+                
+                    <td                         >
+                        61                    </td>
+                
+                    <td                         >
+                        90                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Nicole Booth                    </td>
+                
+                    <td                         >
+                        Women's Youth Under 15 59Kg                    </td>
+                
+                    <td                         >
+                        Martha Bailey                    </td>
+                
+                    <td                         >
+                        59.00                    </td>
+                
+                    <td                         >
+                        40                    </td>
+                
+                    <td                         >
+                        43                    </td>
+                
+                    <td                         >
+                        -46                    </td>
+                
+                    <td                         >
+                        53                    </td>
+                
+                    <td                         >
+                        56                    </td>
+                
+                    <td                         >
+                        60                    </td>
+                
+                    <td                         >
+                        103                    </td>
+                
+                    <td                         >
+                        141                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Nicole Booth                    </td>
+                
+                    <td                         >
+                        Women's Youth Under 15 64Kg                    </td>
+                
+                    <td                         >
+                        Darcy Ruddock                    </td>
+                
+                    <td                         >
+                        60.80                    </td>
+                
+                    <td                         >
+                        41                    </td>
+                
+                    <td                         >
+                        44                    </td>
+                
+                    <td                         >
+                        -46                    </td>
+                
+                    <td                         >
+                        53                    </td>
+                
+                    <td                         >
+                        56                    </td>
+                
+                    <td                         >
+                        60                    </td>
+                
+                    <td                         >
+                        104                    </td>
+                
+                    <td                         >
+                        139                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Nicole Booth                    </td>
+                
+                    <td                         >
+                        Women's Youth Under 15 71Kg                    </td>
+                
+                    <td                         >
+                        Elli McEvatt                    </td>
+                
+                    <td                         >
+                        68.90                    </td>
+                
+                    <td                         >
+                        60                    </td>
+                
+                    <td                         >
+                        63                    </td>
+                
+                    <td                         >
+                        66                    </td>
+                
+                    <td                         >
+                        79                    </td>
+                
+                    <td                         >
+                        83                    </td>
+                
+                    <td                         >
+                        87                    </td>
+                
+                    <td                         >
+                        153                    </td>
+                
+                    <td                         >
+                        190                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Nicole Booth                    </td>
+                
+                    <td                         >
+                        Women's Youth Under 15 76Kg                    </td>
+                
+                    <td                         >
+                        Megan Williams                    </td>
+                
+                    <td                         >
+                        75.90                    </td>
+                
+                    <td                         >
+                        45                    </td>
+                
+                    <td                         >
+                        48                    </td>
+                
+                    <td                         >
+                        50                    </td>
+                
+                    <td                         >
+                        55                    </td>
+                
+                    <td                         >
+                        -57                    </td>
+                
+                    <td                         >
+                        -58                    </td>
+                
+                    <td                         >
+                        105                    </td>
+                
+                    <td                         >
+                        124                    </td>
+                            </tr>
+                    <tr>
+                
+                    <td                         >
+                        Fylde Coast Weightlifting Open 2021                    </td>
+                
+                    <td                         >
+                        2021-10-03                    </td>
+                
+                    <td                         >
+                        Nicole Booth                    </td>
+                
+                    <td                         >
+                        Women's Youth Under 17 81+Kg                    </td>
+                
+                    <td                         >
+                        Tyler Johnston                    </td>
+                
+                    <td                         >
+                        91.00                    </td>
+                
+                    <td                         >
+                        -72                    </td>
+                
+                    <td                         >
+                        -72                    </td>
+                
+                    <td                         >
+                        75                    </td>
+                
+                    <td                         >
+                        90                    </td>
+                
+                    <td                         >
+                        -95                    </td>
+                
+                    <td                         >
+                        -95                    </td>
+                
+                    <td                         >
+                        165                    </td>
+                
+                    <td                         >
+                        181                    </td>
+                            </tr>
+                </tbody>
+    </table>
+
+<hr>
+    <a href="https://bwl.sport80.com/support/front_panel" data-callback="bind_frontend_support" class="pop_up">
+        <p class="center"><i class="fa fa fa-life-ring"></i> Support</p>
+    </a>
+
+
+<!-- <div class="center">
+    <a href="https://bwl.sport80.com/login">
+            <img src="https://d7skausf3l8pb.cloudfront.net/branding/a4b33854-d5b5-416b-8e9e-8cab86a792c8/29b82f396ddf6e889fc2b5bf002d1855-5f92851e9422e016457665.png" style="max-width:240px; max-height:130px; " class="mgn-bot-20"  >        </a>
+</div> -->
+
+</div>
+
+<div class="loginFooter">
+    <div class="center">
+        <img class="logo" src="/assets/2/img/s80logo-whitebg-poweredby.png" alt="Sport:80 Logo" />
+        <p class="legalInfo">© 2021 Sport:80, All rights reserved.</p>
+    </div>
+</div>
+
+</div>
+<!--/span-->
+<!-- </div> -->
+<!--/row-->
+
+<!-- </div> -->
+<!--/fluid-row-->
+
+<!-- </div> -->
+<!--/.fluid-container-->
+
+<div id="footer" class="">
+    <hr>
+    <div class="all-caps txt-12 mgn-bot-15 center">
+                    BY CONTINUING TO USE OUR WEBSITE/PLATFORM YOU ARE AGREEING TO OUR <a href="https://bwl.sport80.com/policies/terms_and_conditions" target="_blank">TERMS AND CONDITIONS</a> AND <a href="https://bwl.sport80.com/policies/privacy_policy" target="_blank">PRIVACY POLICY.</a>
+            </div>
+    <div class="txt-10 center">Any commercial use of this website is
+        prohibited.
+    </div>
+    <div class="txt-10 center">
+        &copy; 2021 Sport:80, All rights reserved.
+    </div>
+    <div class="txt-10 center">
+        Sport:80 Services Limited, Unit 3, Neepsend Triangle Business Centre, 1 Burton Road, Sheffield, S3 8BW. VAT Number: GB220427746, CRN: 08324832    </div>
+            <img src="https://bwl.sport80.com/assets/2/img/PoweredbyEmailLogoWhite.png" style="max-width:250px; " class="powered-by"  >    </div><!--[if lt IE 10 ]>
+<script>
+    $('body').html('<div id="outdated">' +
+    'You are using an outdated browser please update it to be able use this site.<br>' +
+    'Chrome: <a href="https://www.google.co.uk/chrome/browser/desktop/">https://www.google.co.uk/chrome/browser/desktop/</a><br>' +
+    'Firefox: <a href="https://www.mozilla.org/en-GB/firefox/new/">https://www.mozilla.org/en-GB/firefox/new/</a><br>' +
+    'Internet Explorer: <a href="https://www.microsoft.com/en-gb/download/internet-explorer.aspx">https://www.microsoft.com/en-gb/download/internet-explorer.aspx</a><br>' +
+    'Thank you.' +
+    '</div><style>' +
+    '#outdated { width: 100%; background-color: #4C6078; color: white; font-size: 25px; padding: 20px 5%; line-height: 120%; } #outdated a, #outdated a:hover,#outdated a:visited {color: #fff;text-decoration: underline;}' +
+    '</style>');
+</script>
+<![endif]-->
+</body>
+</html>
