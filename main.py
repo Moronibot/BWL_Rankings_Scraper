@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 
 import requests
+import pandas
+import csv
 from bs4 import BeautifulSoup
 
 
@@ -38,11 +40,24 @@ class DatabaseScraper:
         result_table_id = "ranking-matches"
         soup = BeautifulSoup(page_text, "html.parser")
         result_table = soup.find("table", id=result_table_id)
-        print(get_table_headers(result_table))
-        print(get_table_rows(result_table))
+        table_headers = get_table_headers(result_table)
+        table_rows = get_table_rows(result_table)
+        table_rows.insert(0, table_headers)
+        return table_rows
 
     def strip_index_table(self, page_text: str):
-        pass
+        index_page = self.BROWSER_SESSION.get(self.EVENT_INDEX)
+        result_table_id = "ranking-matches-resources"
+        soup = BeautifulSoup(index_page.text, "html.parser")
+        result_table = soup.find("table", id=result_table_id)
+        table_headers = get_table_headers(result_table)
+        table_rows = get_table_rows(result_table)
+        table_rows.insert(0, table_headers)
+        # Todo - make this shit modular...and the strip_results_table thing
+        for rows in table_rows:
+            print(rows)
+        return table_rows
+
 
     def get_event_result(self, event_id: int):
         event_page = self.BROWSER_SESSION.get(f"{self.EVENT_INDEX}&resource={event_id}")
@@ -51,8 +66,16 @@ class DatabaseScraper:
     def main(self):
         with open("result_page.txt", 'r') as saved_file:
             result_page = saved_file.read()
-        self.strip_result_table(result_page)
+        results = self.strip_result_table(result_page)
+        self.data_analysis(results)
+
+    def data_analysis(self, results_csv):
+        """ OK so this bit is working """
+        data = pandas.DataFrame(results_csv[1::], columns=results_csv[0:1:])
+        print(data)
+
 
 if __name__ == '__main__':
     scraper = DatabaseScraper()
-    scraper.main()
+    scraper.strip_index_table(None)
+    #scraper.main()
