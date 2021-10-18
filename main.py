@@ -14,7 +14,7 @@ def get_table_headers(table):
     return headers
 
 
-def get_table_rows(table):
+def get_table_rows(table, data_id_res=False):
     """Given a table, returns all its rows"""
     rows = []
     for tr in table.find_all("tr")[1:]:
@@ -26,9 +26,18 @@ def get_table_rows(table):
                 cells.append(th.text.strip())
         else:
             for td in tds:
-                cells.append(td.text.strip())
+                if data_id_res and len(td.find_all('i')) == 1:
+                    strip_it = td.find_all('i')
+                    cells.append(stripper(str(strip_it)))
+                if len(td.text.strip()) > 0:
+                    cells.append(td.text.strip())
         rows.append(cells)
     return rows
+
+
+def stripper(lazy_af: str):
+    # fuck this shit, lets butcher this code.
+    return lazy_af.split('data-id-resource="')[1].split('">')[0]
 
 
 class DatabaseScraper:
@@ -51,13 +60,12 @@ class DatabaseScraper:
         soup = BeautifulSoup(index_page.text, "html.parser")
         result_table = soup.find("table", id=result_table_id)
         table_headers = get_table_headers(result_table)
-        table_rows = get_table_rows(result_table)
+        table_rows = get_table_rows(result_table, True)
         table_rows.insert(0, table_headers)
         # Todo - make this shit modular...and the strip_results_table thing
         for rows in table_rows:
             print(rows)
         return table_rows
-
 
     def get_event_result(self, event_id: int):
         event_page = self.BROWSER_SESSION.get(f"{self.EVENT_INDEX}&resource={event_id}")
@@ -78,4 +86,4 @@ class DatabaseScraper:
 if __name__ == '__main__':
     scraper = DatabaseScraper()
     scraper.strip_index_table(None)
-    #scraper.main()
+    # scraper.main()
