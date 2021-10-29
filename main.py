@@ -1,9 +1,13 @@
 #!/usr/bin/env python
 
+import time
+
+start_time = time.time()
+
 import requests
-import pandas
 import csv
 from bs4 import BeautifulSoup
+from db_dataclasses import LifterResult
 
 
 def get_table_headers(table):
@@ -29,7 +33,7 @@ def get_table_rows(table, data_id_res=False):
                 if data_id_res and len(td.find_all('i')) == 1:
                     strip_it = td.find_all('i')
                     cells.append(stripper(str(strip_it)))
-                if len(td.text.strip()) > 0:
+                else:
                     cells.append(td.text.strip())
         rows.append(cells)
     return rows
@@ -49,9 +53,9 @@ class DatabaseScraper:
         result_table_id = "ranking-matches"
         soup = BeautifulSoup(page_text, "html.parser")
         result_table = soup.find("table", id=result_table_id)
-        table_headers = get_table_headers(result_table)
+        # table_headers = get_table_headers(result_table)
         table_rows = get_table_rows(result_table)
-        table_rows.insert(0, table_headers)
+        # table_rows.insert(0, table_headers)
         return table_rows
 
     def tier_check(self, index_table):
@@ -76,33 +80,46 @@ class DatabaseScraper:
         event_page = self.BROWSER_SESSION.get(f"{self.EVENT_INDEX}&resource={event_id}")
         return self.strip_result_table(event_page.text)
 
-    def main(self):
-        with open("result_page.txt", 'r') as saved_file:
-            result_page = saved_file.read()
-        results = self.strip_result_table(result_page)
-        self.data_analysis(results)
-
-    def fetch_meets_by_year(self, year: int):
+    def create_meets_index_db(self):
         """
-        Probably going to make this a filtering function or something and
-        dump the parsed index to a CSV type database
+        Will need to make an update version of this to stop pulling through all the shit again
         """
         meet_options = self.strip_index_table()
-        with open(f"meets_{year}.csv", "w") as csv_file:
+        with open(f"meets_index_db.csv", "w") as csv_file:
             csvwrite = csv.writer(csv_file)
-            csvwrite.writerow(meet_options[0])
             for meets in meet_options:
-                if str(year) in meets[2]:
-                    csvwrite.writerow(meets)
+                csvwrite.writerow(meets)
 
-    def data_analysis(self, results_csv):
-        """ OK so this bit is working """
-        data = pandas.DataFrame(results_csv[1::], columns=results_csv[0:1:])
-        print(data)
+    def create_results_db(self):
+        event_id_list = []
+        with open("meets_index_db.csv", "r") as index_file:
+            index_csv = csv.reader(index_file)
+            next(index_file)
+            for rows in index_csv:
+                event_id_list.append(int(rows[4]))
+        for ids in event_id_list:
+            self.write_results(ids)
+
+    def write_results(self, event_id: int):
+        with open("results_db.csv", "a") as results_db:
+            csv_write = csv.writer(results_db)
+            for rows in self.get_event_result(event_id):
+                csv_write.writerow(rows)
+
+    def check_results_db(self):
+        """
+        Runs through the results DB to make sure lines add up right
+        """
+        with open("results_db.csv", "r") as index_file:
+            index_csv = csv.reader(index_file)
+            for rows in index_csv:
+                LifterResult(rows).lift_increments()
 
 
 if __name__ == '__main__':
     scraper = DatabaseScraper()
-    # scraper.strip_index_table()
-    # scraper.main()
-    scraper.fetch_meets_by_year(2021)
+    # scraper.create_meets_index_db()
+    # scraper.create_results_db()
+    scraper.check_results_db()
+
+    print(f"--- {time.time() - start_time} seconds ---")
