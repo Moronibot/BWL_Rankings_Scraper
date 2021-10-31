@@ -110,10 +110,11 @@ class DatabaseScraper:
         """
         Runs through the results DB to make sure lines add up right
         """
+        result_object = []
         with open("results_db.csv", "r") as index_file:
             index_csv = csv.reader(index_file)
             for rows in index_csv:
-                LifterResult(rows).lift_increments()
+                LifterResult(rows)
 
 
 if __name__ == '__main__':

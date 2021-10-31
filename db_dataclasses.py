@@ -16,11 +16,11 @@ class LifterResult(object):
     lifter: str
     bodyweight: float
     sn_1: int
-    sn_2: str
-    sn_3: str
-    cj_1: str
-    cj_2: str
-    cj_3: str
+    sn_2: int
+    sn_3: int
+    cj_1: int
+    cj_2: int
+    cj_3: int
     total: int
     sinclair: int
     expected_len: int = 14
@@ -28,15 +28,20 @@ class LifterResult(object):
     def __init__(self, db_line: list):
         if len(db_line) != self.expected_len:
             sys.exit(f"Entry not formatted correctly...\n{db_line}")
-        self.bodyweight = db_line[5]
-        self.sn_1 = db_line[6]
-        self.sn_2 = db_line[7]
-        self.sn_3 = db_line[8]
-        self.cj_1 = db_line[9]
-        self.cj_2 = db_line[10]
-        self.cj_3 = db_line[11]
+        self.list_t = db_line
+        self.event = db_line[0]
+        self.lifter = db_line[4]
+        self.bodyweight = float(db_line[5])
+        self.sn_1 = (db_line[6])
+        self.sn_2 = (db_line[7])
+        self.sn_3 = (db_line[8])
+        self.cj_1 = (db_line[9])
+        self.cj_2 = (db_line[10])
+        self.cj_3 = (db_line[11])
 
     def lift_increments(self):
-        print(int(self.sn_1))
-        if self.sn_1 is float:
-            print(self.sn_1)
+        try:
+            first_jump = int(self.sn_2) - int(self.sn_1)
+            print(first_jump)
+        except ValueError:
+            print(f"{self.event} : {self.lifter}\n{self.list_t}")
