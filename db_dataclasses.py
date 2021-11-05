@@ -32,12 +32,21 @@ class LifterResult(object):
         self.event = db_line[0]
         self.lifter = db_line[4]
         self.bodyweight = float(db_line[5])
-        self.sn_1 = (db_line[6])
+        self.sn_1 = int(db_line[6])
         self.sn_2 = (db_line[7])
         self.sn_3 = (db_line[8])
         self.cj_1 = (db_line[9])
         self.cj_2 = (db_line[10])
         self.cj_3 = (db_line[11])
+        self.lift_attempts = [self.sn_1, self.sn_2, self.sn_3, self.cj_1, self.cj_2, self.cj_3]
+
+    def first_snatch(self):
+        return self.sn_1
+        """        try:
+                    if self.sn_1 > 1:
+                        return self.sn_1 / self.bodyweight
+                except TypeError:
+                    print(self.sn_1)"""
 
     def lift_increments(self):
         try:

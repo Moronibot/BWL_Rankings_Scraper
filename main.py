@@ -73,7 +73,8 @@ class DatabaseScraper:
         table_rows = get_table_rows(result_table, True)
         table_rows.insert(0, table_headers)
         # Todo - make this shit modular...and the strip_results_table thing
-        parsed_table = self.tier_check(table_rows)
+        #parsed_table = self.tier_check(table_rows)
+        parsed_table = table_rows
         return parsed_table
 
     def get_event_result(self, event_id: int):
@@ -85,7 +86,7 @@ class DatabaseScraper:
         Will need to make an update version of this to stop pulling through all the shit again
         """
         meet_options = self.strip_index_table()
-        with open(f"meets_index_db.csv", "w") as csv_file:
+        with open(f"meets_index_db.csv", "w", newline='') as csv_file:
             csvwrite = csv.writer(csv_file)
             for meets in meet_options:
                 csvwrite.writerow(meets)
@@ -101,7 +102,7 @@ class DatabaseScraper:
             self.write_results(ids)
 
     def write_results(self, event_id: int):
-        with open("results_db.csv", "a") as results_db:
+        with open("results_db.csv", "a", newline='') as results_db:
             csv_write = csv.writer(results_db)
             for rows in self.get_event_result(event_id):
                 csv_write.writerow(rows)
@@ -114,13 +115,30 @@ class DatabaseScraper:
         with open("results_db.csv", "r") as index_file:
             index_csv = csv.reader(index_file)
             for rows in index_csv:
-                LifterResult(rows)
+                try:
+                    isinstance(int(rows[6]), int)
+                except ValueError:
+                    print(rows)
+                #result_object.append(LifterResult(rows).first_snatch())
+        print(result_object)
+
+    def check_index_db(self):
+        """
+        Runs through the results DB to make sure lines add up right
+        """
+        result_object = []
+        with open("meets_index_db.csv", "r") as index_file:
+            index_csv = csv.reader(index_file)
+            for rows in index_csv:
+                if len(rows) != 5:
+                    print(rows)
 
 
 if __name__ == '__main__':
     scraper = DatabaseScraper()
-    # scraper.create_meets_index_db()
-    # scraper.create_results_db()
+    #scraper.create_meets_index_db()
+    #scraper.check_index_db()
+    #scraper.create_results_db()
     scraper.check_results_db()
 
     print(f"--- {time.time() - start_time} seconds ---")
