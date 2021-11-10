@@ -111,16 +111,31 @@ class DatabaseScraper:
         """
         Runs through the results DB to make sure lines add up right
         """
-        result_object = []
+        self.repeat_lifter: dict = {}
         with open("results_db.csv", "r") as index_file:
             index_csv = csv.reader(index_file)
             for rows in index_csv:
-                try:
-                    isinstance(int(rows[6]), int)
-                except ValueError:
-                    print(rows)
-                #result_object.append(LifterResult(rows).first_snatch())
-        print(result_object)
+                self.repeat_lifter_count(rows)
+        for lifters in self.repeat_lifter.values():
+            print(lifters)
+
+    def single_lifter_comps_one_year(self, year):
+        self.repeat_lifter: dict = {}
+        with open("results_db.csv", "r") as index_file:
+            index_csv = csv.reader(index_file)
+            for rows in index_csv:
+                if str(year) in rows[1]:
+                    self.repeat_lifter_count(rows)
+        self.repeat_lifter = dict(sorted(self.repeat_lifter.items(), key=lambda x: x[1], reverse=True))
+        print(f"Lifter: Number of comps in {year}")
+        for lifter, comp_n in self.repeat_lifter.items():
+            print(f"{lifter}: {comp_n}")
+
+    def repeat_lifter_count(self, csv_row: list):
+        if csv_row[4].upper() not in self.repeat_lifter:
+            self.repeat_lifter[csv_row[4].upper()] = 1
+        elif csv_row[4].upper() in self.repeat_lifter:
+            self.repeat_lifter[csv_row[4].upper()] += 1
 
     def check_index_db(self):
         """
@@ -139,6 +154,7 @@ if __name__ == '__main__':
     #scraper.create_meets_index_db()
     #scraper.check_index_db()
     #scraper.create_results_db()
-    scraper.check_results_db()
+    #scraper.check_results_db()
+    scraper.single_lifter_comps_one_year(2021)
 
     print(f"--- {time.time() - start_time} seconds ---")
