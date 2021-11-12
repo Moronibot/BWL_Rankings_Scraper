@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+import operator
 import time
 
 start_time = time.time()
@@ -7,7 +7,7 @@ start_time = time.time()
 import requests
 import csv
 from bs4 import BeautifulSoup
-from db_dataclasses import LifterResult
+from entry_dataclass import LiftEntry
 
 
 def get_table_headers(table):
@@ -48,6 +48,7 @@ class DatabaseScraper:
     def __init__(self):
         self.BROWSER_SESSION = requests.Session()
         self.EVENT_INDEX = "https://bwl.sport80.com/event_results?id_ranking=8"
+        self.RESULTS_DB: list = []
 
     def strip_result_table(self, page_text: str):
         result_table_id = "ranking-matches"
@@ -121,15 +122,51 @@ class DatabaseScraper:
 
     def single_lifter_comps_one_year(self, year):
         self.repeat_lifter: dict = {}
+        total_lifts_yr: int = 0
         with open("results_db.csv", "r") as index_file:
             index_csv = csv.reader(index_file)
             for rows in index_csv:
                 if str(year) in rows[1]:
+                    total_lifts_yr += 1
                     self.repeat_lifter_count(rows)
         self.repeat_lifter = dict(sorted(self.repeat_lifter.items(), key=lambda x: x[1], reverse=True))
         print(f"Lifter: Number of comps in {year}")
+        comp_num = 6
+        comp_log = 0
         for lifter, comp_n in self.repeat_lifter.items():
-            print(f"{lifter}: {comp_n}")
+            if comp_n >= comp_num:
+                print(f"{lifter}: {comp_n}")
+                comp_log += 1
+        print(f"Number of lifters with more than {comp_num} comps: {comp_log}")
+
+    def filter_by_year(self, results_db: list, year: str) -> list:
+        filtered_db = []
+        for line in results_db:
+            if year in line.date:
+                filtered_db.append(line)
+        return filtered_db
+
+    def top_lifter(self, measure: str, year: str):
+        results_db = self.load_results_db()
+        results_db = self.filter_by_year(results_db, '2021')
+        top_lifts = {}
+        for entry in results_db:
+            if entry.lifter_name() not in top_lifts and entry.sinclair:
+                top_lifts[entry.lifter_name()] = entry.sinclair
+            elif entry.lifter_name() in top_lifts and entry.sinclair > top_lifts[entry.lifter_name()]:
+                top_lifts[entry.lifter_name()] = entry.sinclair
+
+        sorted_lifts = (sorted(top_lifts.items(), key=lambda x: x[1], reverse=True))
+        for lifts in sorted_lifts:
+            print(lifts)
+
+    def load_results_db(self) -> list:
+        results_db = []
+        with open("results_db.csv", "r") as index_file:
+            index_csv = csv.reader(index_file)
+            for row in index_csv:
+                results_db.append(LiftEntry(row))
+        return results_db
 
     def repeat_lifter_count(self, csv_row: list):
         if csv_row[4].upper() not in self.repeat_lifter:
@@ -155,6 +192,8 @@ if __name__ == '__main__':
     #scraper.check_index_db()
     #scraper.create_results_db()
     #scraper.check_results_db()
-    scraper.single_lifter_comps_one_year(2021)
+    #scraper.single_lifter_comps_one_year(2021)
+    #scraper.load_results_db()
+    scraper.top_lifter('sinclair', 2021)
 
     print(f"--- {time.time() - start_time} seconds ---")
