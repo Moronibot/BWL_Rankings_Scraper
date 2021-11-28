@@ -146,15 +146,15 @@ class DatabaseScraper:
                 filtered_db.append(line)
         return filtered_db
 
-    def top_lifter(self, measure: str, year: str):
+    def top_totals(self, year: str):
         results_db = self.load_results_db()
-        results_db = self.filter_by_year(results_db, '2021')
+        results_db = self.filter_by_year(results_db, year)
         top_lifts = {}
         for entry in results_db:
-            if entry.lifter_name() not in top_lifts and entry.sinclair:
-                top_lifts[entry.lifter_name()] = entry.sinclair
-            elif entry.lifter_name() in top_lifts and entry.sinclair > top_lifts[entry.lifter_name()]:
-                top_lifts[entry.lifter_name()] = entry.sinclair
+            if entry.lifter_name() not in top_lifts and entry.total_kg():
+                top_lifts[entry.lifter_name()] = entry.total_kg()
+            elif entry.lifter_name() in top_lifts and entry.total_kg() > top_lifts[entry.lifter_name()]:
+                top_lifts[entry.lifter_name()] = entry.total_kg()
 
         sorted_lifts = (sorted(top_lifts.items(), key=lambda x: x[1], reverse=True))
         for lifts in sorted_lifts:
@@ -194,6 +194,6 @@ if __name__ == '__main__':
     #scraper.check_results_db()
     #scraper.single_lifter_comps_one_year(2021)
     #scraper.load_results_db()
-    scraper.top_lifter('sinclair', 2021)
+    scraper.top_totals('2021')
 
     print(f"--- {time.time() - start_time} seconds ---")

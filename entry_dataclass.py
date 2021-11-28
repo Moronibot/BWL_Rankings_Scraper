@@ -39,7 +39,7 @@ class LiftEntry:
         pass
 
     def total_kg(self):
-        pass
+        return self.total
 
     def sinclair(self):
         return self.sinclair
