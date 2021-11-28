@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-import operator
 import time
 
 start_time = time.time()
@@ -8,6 +7,7 @@ import requests
 import csv
 from bs4 import BeautifulSoup
 from entry_dataclass import LiftEntry
+from filtered_data.data_tools import dump_to_csv
 
 
 def get_table_headers(table):
@@ -74,7 +74,7 @@ class DatabaseScraper:
         table_rows = get_table_rows(result_table, True)
         table_rows.insert(0, table_headers)
         # Todo - make this shit modular...and the strip_results_table thing
-        #parsed_table = self.tier_check(table_rows)
+        # parsed_table = self.tier_check(table_rows)
         parsed_table = table_rows
         return parsed_table
 
@@ -146,9 +146,10 @@ class DatabaseScraper:
                 filtered_db.append(line)
         return filtered_db
 
-    def top_totals(self, year: str):
+    def top_totals(self, year: str = None):
         results_db = self.load_results_db()
-        results_db = self.filter_by_year(results_db, year)
+        if year:
+            results_db = self.filter_by_year(results_db, year)
         top_lifts = {}
         for entry in results_db:
             if entry.lifter_name() not in top_lifts and entry.total_kg():
@@ -157,8 +158,8 @@ class DatabaseScraper:
                 top_lifts[entry.lifter_name()] = entry.total_kg()
 
         sorted_lifts = (sorted(top_lifts.items(), key=lambda x: x[1], reverse=True))
-        for lifts in sorted_lifts:
-            print(lifts)
+        #return [(key, value) for key, value in top_lifts.items()]
+        return sorted_lifts
 
     def load_results_db(self) -> list:
         results_db = []
@@ -188,12 +189,13 @@ class DatabaseScraper:
 
 if __name__ == '__main__':
     scraper = DatabaseScraper()
-    #scraper.create_meets_index_db()
-    #scraper.check_index_db()
-    #scraper.create_results_db()
-    #scraper.check_results_db()
-    #scraper.single_lifter_comps_one_year(2021)
-    #scraper.load_results_db()
-    scraper.top_totals('2021')
+    # scraper.create_meets_index_db()
+    # scraper.check_index_db()
+    # scraper.create_results_db()
+    # scraper.check_results_db()
+    # scraper.single_lifter_comps_one_year(2021)
+    # scraper.load_results_db()
+    lifts = scraper.top_totals('2021')
+    dump_to_csv("top_totals", lifts)
 
     print(f"--- {time.time() - start_time} seconds ---")
