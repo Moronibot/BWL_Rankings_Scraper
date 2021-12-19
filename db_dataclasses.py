@@ -23,10 +23,10 @@ class LifterResult(object):
     cj_3: int
     total: int
     sinclair: int
-    expected_len: int = 14
+    expected_entry_len: int = 14
 
     def __init__(self, db_line: list):
-        if len(db_line) != self.expected_len:
+        if len(db_line) != self.expected_entry_len:
             sys.exit(f"Entry not formatted correctly...\n{db_line}")
         self.list_t = db_line
         self.event = db_line[0]
