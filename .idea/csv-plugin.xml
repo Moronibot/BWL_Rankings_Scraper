@@ -94,7 +94,28 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/lifter_data/BETH_ASHBEE_2021.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/lifter_data/DARREN_MARR_2021.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/lifter_data/DAVID_STEEL_2021.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/lifter_data/GABRIELLE_PROPER_2021.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

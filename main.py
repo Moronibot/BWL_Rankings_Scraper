@@ -181,10 +181,10 @@ class DatabaseScraper:
     def write_lifter_db(self, filename: str, line_data: list):
         header = ['DATE', 'MADE SNATCH', 'MADE C&J', 'MADE LIFT PERCENTAGE', 'BEST SNATCH',
                   'BEST C&J', 'TOTAL', 'SINCLAIR']
-        with open(f"lifter_data/{filename}.csv", "a", newline='') as results_db:
+        with open(f"lifter_data/{filename}.csv", "w", newline='') as results_db:
             csv_write = csv.writer(results_db)
             csv_write.writerow(header)
-            for rows in line_data:
+            for rows in line_data[::-1]:
                 csv_write.writerow(rows)
 
     def gen_filename(self, lifter_name, year):

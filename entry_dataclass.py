@@ -1,6 +1,9 @@
 import dataclasses
 
 N_TOTAL_LIFTS = 6
+N_HALF_LIFTS = 3
+N_MAX_PERCENT = 100
+N_CUM_LIFT_PERCENT = N_MAX_PERCENT * 2
 
 @dataclasses.dataclass
 class LiftEntry:
@@ -31,9 +34,9 @@ class LiftEntry:
         snatches: list = [self.sn_1, self.sn_2, self.sn_3]
         made_snatches: list = []
         for n_snatch in snatches:
-            if '-' not in n_snatch:
+            if '-' not in n_snatch and n_snatch != '0':
                 made_snatches.append(int(n_snatch))
-        return len(made_snatches), self.best_lift(made_snatches)
+        return int((len(made_snatches) / N_HALF_LIFTS) * 100), self.best_lift(made_snatches)
 
     def best_lift(self, made_lifts: list):
         if len(made_lifts) != 0:
@@ -45,9 +48,9 @@ class LiftEntry:
         clean_jerks: list = [self.cj_1, self.cj_2, self.cj_3]
         made_clean_jerks: list = []
         for n_cleanjerk in clean_jerks:
-            if '-' not in n_cleanjerk:
+            if '-' not in n_cleanjerk and n_cleanjerk != '0':
                 made_clean_jerks.append(int(n_cleanjerk))
-        return len(made_clean_jerks), self.best_lift(made_clean_jerks)
+        return int((len(made_clean_jerks) / N_HALF_LIFTS) * 100), self.best_lift(made_clean_jerks)
 
     def overall_lift_percentage(self):
-        return int((self.made_snatches()[0] + self.made_cleanjerks()[0]) / N_TOTAL_LIFTS * 100)
+        return int(((self.made_snatches()[0] + self.made_cleanjerks()[0]) / N_CUM_LIFT_PERCENT) * N_MAX_PERCENT)
