@@ -6,8 +6,10 @@ from entry_dataclass import LiftEntry
 from filtered_data.data_tools import dump_to_csv
 from scraper_tools import get_table_rows, get_table_headers, stripper
 from statistics import mean, median
-from magic_things import MADE
-from static_tools import distribute_data, convert_to_csv_list
+from magic_things import MADE, ENTRY_LENGTH
+from static_tools import distribute_data, convert_to_csv_list, check_and_fix_entry
+from time import time
+
 
 def setup_db():
     scraper.create_meets_index_db()
@@ -82,7 +84,7 @@ class DatabaseScraper:
         results_db = self.load_results_db()
         bad_entries = []
         for lines in results_db:
-            if len(lines) != 14:
+            if len(lines) != ENTRY_LENGTH:
                 bad_entries.append(lines)
         return False if len(bad_entries) != 0 else True
 
@@ -144,7 +146,8 @@ class DatabaseScraper:
         with open("data/results_db.csv", "r") as index_file:
             index_csv = csv.reader(index_file)
             for row in index_csv:
-                results_db.append(LiftEntry(row))
+                checked_row = check_and_fix_entry(row)
+                results_db.append(LiftEntry(checked_row))
         return results_db
 
     def repeat_lifter_count(self, lifter_name: str):
@@ -210,7 +213,7 @@ class DatabaseScraper:
             if (entry.first_snatch_jump()[1]) == max_percentage:
                 print(entry.full_entry)
         attempt_dist = distribute_data(percentages)
-        #dump_to_csv("second_snatch_attempts", convert_to_csv_list(attempt_dist))
+        # dump_to_csv("second_snatch_attempts", convert_to_csv_list(attempt_dist))
 
     def third_snatches(self):
         results_db: list = self.load_results_db()
@@ -233,7 +236,7 @@ class DatabaseScraper:
             if (entry.second_snatch_jump()[1]) == max_percentage:
                 print(entry.full_entry)
         attempt_dist = distribute_data(percentages)
-        #dump_to_csv("third_snatch_attempts", convert_to_csv_list(attempt_dist))
+        # dump_to_csv("third_snatch_attempts", convert_to_csv_list(attempt_dist))
 
     def second_cjs(self):
         results_db: list = self.load_results_db()
@@ -256,7 +259,7 @@ class DatabaseScraper:
             if (entry.first_cj_jump()[1]) == max_percentage:
                 print(entry.full_entry)
         attempt_dist = distribute_data(percentages)
-        #dump_to_csv("second_cj_attempts", convert_to_csv_list(attempt_dist))
+        # dump_to_csv("second_cj_attempts", convert_to_csv_list(attempt_dist))
 
     def third_cjs(self):
         results_db: list = self.load_results_db()
@@ -279,17 +282,23 @@ class DatabaseScraper:
             if (entry.second_cj_jump()[1]) == max_percentage:
                 print(entry.full_entry)
         attempt_dist = distribute_data(percentages)
-        #dump_to_csv("third_cj_attempts", convert_to_csv_list(attempt_dist))
+        # dump_to_csv("third_cj_attempts", convert_to_csv_list(attempt_dist))
+
+    def tester(self):
+        results_db: list = self.load_results_db()
+        total_time = 0
+        print(results_db[0].full_entry)
 
 
 if __name__ == '__main__':
     scraper = DatabaseScraper()
-    scraper.second_snatches()
-    scraper.third_snatches()
-    scraper.second_cjs()
-    scraper.third_cjs()
+    # scraper.second_snatches()
+    # scraper.third_snatches()
+    # scraper.second_cjs()
+    # scraper.third_cjs()
     # scraper.single_lifter_comps_one_year('2021', 10)
     # scraper.single_lifter_results()
     # scraper.load_results_db()
     # lifts = scraper.top_totals('2021')
     # dump_to_csv("top_totals", lifts)
+    scraper.tester()

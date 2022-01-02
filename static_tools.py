@@ -67,3 +67,17 @@ def convert_to_csv_list(dict_to_convert: dict) -> list:
     for x, y in dict_to_convert.items():
         list_to_ret.append([x, y])
     return list_to_ret
+
+
+def split_date(date_str: str) -> tuple:
+    year, month, day = map(int, date_str.split('-'))
+    return day, month, year
+
+
+def check_and_fix_entry(entry: list) -> list:
+    for n in range(len(entry)):
+        if len(entry[n]) == 0 and n <= 4:
+            entry[n] = 'None'
+        elif len(entry[n]) == 0 and n >= 5:
+            entry[n] = NO_LIFT_REC
+    return entry

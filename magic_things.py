@@ -9,3 +9,4 @@ NO_LIFT_REC = '0'
 STR_NO_LIFT = 'no lift rec'
 BIG_NUM = 999  # This is to make sorting easy
 ZERO_INT = 0
+ENTRY_LENGTH = 14

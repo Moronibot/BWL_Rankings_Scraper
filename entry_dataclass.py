@@ -6,29 +6,17 @@ from magic_things import *
 @dataclasses.dataclass
 class LiftEntry:
     def __init__(self, entry_line: list):
-        # ToDo - Move this to initial import of data
-        for n in range(len(entry_line)):
-            if len(entry_line[n]) == 0 and n <= 4:
-                entry_line[n] = 'None'
-            elif len(entry_line[n]) == 0 and n >= 5:
-                entry_line[n] = NO_LIFT_REC
         self.event: str = entry_line[0]
-        self.date: str = entry_line[1]
+        self.day, self.month, self.year = split_date(entry_line[1])
         self.centre_ref: str = entry_line[2]
         self.lift_class: str = entry_line[3]
         self.lifter_name: str = entry_line[4].upper()
         self.bodyweight: float = float(entry_line[5])
-        self.sn_1 = (entry_line[6])
-        self.sn_2 = (entry_line[7])
-        self.sn_3 = (entry_line[8])
-        self.snatches: list = [self.sn_1, self.sn_2, self.sn_3]
-        self.cj_1 = (entry_line[9])
-        self.cj_2 = (entry_line[10])
-        self.cj_3 = entry_line[11]
-        self.clean_jerks: list = [self.cj_1, self.cj_2, self.cj_3]
+        self.snatches: list = [entry_line[6], entry_line[7], entry_line[8]]
+        self.clean_jerks: list = [entry_line[9], entry_line[10], entry_line[11]]
         self.total_kg: int = int(entry_line[12])
-        self.sinclair = int(entry_line[13])
-        self.full_entry = entry_line
+        self.sinclair: int = int(entry_line[13])
+        self.full_entry: list = entry_line
 
     def made_snatches(self) -> tuple:
         made_snatches: list = strip_missed_lifts(self.snatches)
