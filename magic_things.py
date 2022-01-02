@@ -1,0 +1,11 @@
+N_TOTAL_LIFTS = 6
+N_HALF_LIFTS = 3
+N_MAX_PERCENT = 100
+N_CUM_LIFT_PERCENT = N_MAX_PERCENT * 2
+MISS_CHAR = '-'
+MADE = 'made'
+MISS = 'miss'
+NO_LIFT_REC = '0'
+STR_NO_LIFT = 'no lift rec'
+BIG_NUM = 999  # This is to make sorting easy
+ZERO_INT = 0

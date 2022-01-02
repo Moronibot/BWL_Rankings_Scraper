@@ -1,6 +1,6 @@
 import time
 import csv
-import os
+
 
 def dump_to_csv(filename: str, data_list: list):
     full_filename = f"filtered_data/{filename}_{time.strftime('%H%M%S')}.csv"
@@ -9,6 +9,7 @@ def dump_to_csv(filename: str, data_list: list):
         for line in data_list:
             writer.writerow(line)
     return full_filename
+
 
 def quick_plot(filename):
     pass

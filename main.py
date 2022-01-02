@@ -1,15 +1,13 @@
 #!/usr/bin/env python
-import time
-
-start_time = time.time()
-
 import requests
 import csv
 from bs4 import BeautifulSoup
 from entry_dataclass import LiftEntry
 from filtered_data.data_tools import dump_to_csv
 from scraper_tools import get_table_rows, get_table_headers, stripper
-
+from statistics import mean, median
+from magic_things import MADE
+from static_tools import distribute_data, convert_to_csv_list
 
 def setup_db():
     scraper.create_meets_index_db()
@@ -175,11 +173,11 @@ class DatabaseScraper:
                 made_cj, best_cj = entry.made_cleanjerks()
                 lifter_results.append([entry.date, made_snatches, made_cj, entry.overall_lift_percentage(),
                                        best_snatch, best_cj, entry.total_kg, entry.sinclair])
-        lifter_filename = self.gen_filename(lifter_name, year)
-        self.write_lifter_db(lifter_filename, lifter_results)
+        # lifter_filename = self.gen_filename(lifter_name, year)
+        # self.write_lifter_db(lifter_filename, lifter_results)
 
     def write_lifter_db(self, filename: str, line_data: list):
-        header = ['DATE', 'MADE SNATCH', 'MADE C&J', 'MADE LIFT PERCENTAGE', 'BEST SNATCH',
+        header = ['DATE', 'MADE SNATCH (%)', 'MADE C&J (%)', 'COMBINED MADE LIFT (%)', 'BEST SNATCH',
                   'BEST C&J', 'TOTAL', 'SINCLAIR']
         with open(f"lifter_data/{filename}.csv", "w", newline='') as results_db:
             csv_write = csv.writer(results_db)
@@ -191,12 +189,107 @@ class DatabaseScraper:
         lifter = lifter_name.replace(' ', '_')
         return f"{lifter}_{year}"
 
+    def second_snatches(self):
+        results_db: list = self.load_results_db()
+        made_list = []
+        percentages = []
+        year = '2021'
+        for entry in results_db:
+            try:
+                if year in entry.date and 'made' in entry.first_snatch_jump():
+                    made_list.append(entry)
+            except TypeError:
+                print(entry.full_entry)
+        for entry in made_list:
+            percentages.append(entry.first_snatch_jump()[1])
+        max_percentage = max(percentages)
+        print(f"Median jump: {median(percentages)}\n"
+              f"Average jump: {mean(percentages)}\n"
+              f"Largest jump: {max_percentage}")
+        for entry in made_list:
+            if (entry.first_snatch_jump()[1]) == max_percentage:
+                print(entry.full_entry)
+        attempt_dist = distribute_data(percentages)
+        #dump_to_csv("second_snatch_attempts", convert_to_csv_list(attempt_dist))
+
+    def third_snatches(self):
+        results_db: list = self.load_results_db()
+        made_list = []
+        percentages = []
+        year = '2021'
+        for entry in results_db:
+            try:
+                if year in entry.date and MADE in entry.second_snatch_jump():
+                    made_list.append(entry)
+            except TypeError:
+                print(entry.full_entry)
+        for entry in made_list:
+            percentages.append(entry.second_snatch_jump()[1])
+        max_percentage = max(percentages)
+        print(f"Median jump: {median(percentages)}\n"
+              f"Average jump: {mean(percentages)}\n"
+              f"Largest jump: {max_percentage}")
+        for entry in made_list:
+            if (entry.second_snatch_jump()[1]) == max_percentage:
+                print(entry.full_entry)
+        attempt_dist = distribute_data(percentages)
+        #dump_to_csv("third_snatch_attempts", convert_to_csv_list(attempt_dist))
+
+    def second_cjs(self):
+        results_db: list = self.load_results_db()
+        made_list = []
+        percentages = []
+        year = '2021'
+        for entry in results_db:
+            try:
+                if year in entry.date and 'made' in entry.first_cj_jump():
+                    made_list.append(entry)
+            except TypeError:
+                print(entry.full_entry)
+        for entry in made_list:
+            percentages.append(entry.first_cj_jump()[1])
+        max_percentage = max(percentages)
+        print(f"Median jump: {median(percentages)}\n"
+              f"Average jump: {mean(percentages)}\n"
+              f"Largest jump: {max_percentage}")
+        for entry in made_list:
+            if (entry.first_cj_jump()[1]) == max_percentage:
+                print(entry.full_entry)
+        attempt_dist = distribute_data(percentages)
+        #dump_to_csv("second_cj_attempts", convert_to_csv_list(attempt_dist))
+
+    def third_cjs(self):
+        results_db: list = self.load_results_db()
+        made_list = []
+        percentages = []
+        year = '2021'
+        for entry in results_db:
+            try:
+                if year in entry.date and MADE in entry.second_cj_jump():
+                    made_list.append(entry)
+            except TypeError:
+                print(entry.full_entry)
+        for entry in made_list:
+            percentages.append(entry.second_cj_jump()[1])
+        max_percentage = max(percentages)
+        print(f"Median jump: {median(percentages)}\n"
+              f"Average jump: {mean(percentages)}\n"
+              f"Largest jump: {max_percentage}")
+        for entry in made_list:
+            if (entry.second_cj_jump()[1]) == max_percentage:
+                print(entry.full_entry)
+        attempt_dist = distribute_data(percentages)
+        #dump_to_csv("third_cj_attempts", convert_to_csv_list(attempt_dist))
+
+
 if __name__ == '__main__':
     scraper = DatabaseScraper()
-    scraper.single_lifter_comps_one_year('2021', 10)
+    scraper.second_snatches()
+    scraper.third_snatches()
+    scraper.second_cjs()
+    scraper.third_cjs()
+    # scraper.single_lifter_comps_one_year('2021', 10)
     # scraper.single_lifter_results()
     # scraper.load_results_db()
     # lifts = scraper.top_totals('2021')
     # dump_to_csv("top_totals", lifts)
-
-    print(f"--- {time.time() - start_time} seconds ---")
