@@ -36,8 +36,8 @@ def lift_order_correct(lifts: list):
     return True if lifts[0][1] <= lifts[1][1] <= lifts[2][1] else False
 
 
-def sort_lift_order(lifts: list):
-    lifts.sort(key=lambda x: x[1])
+def sort_lift_order(lifts: list, reverse: bool = False):
+    lifts.sort(key=lambda x: x[1], reverse=reverse)
     return lifts
 
 
@@ -81,3 +81,11 @@ def check_and_fix_entry(entry: list) -> list:
         elif len(entry[n]) == 0 and n >= 5:
             entry[n] = NO_LIFT_REC
     return entry
+
+def gender(wl_class: str = "Women's Junior Under 20 61Kg") -> str:
+    gender_split = wl_class.split(" ")[0]
+    if gender_split in ["Men's", "Women's"]:
+        return gender_split
+
+if __name__ == '__main__':
+    print(gender())

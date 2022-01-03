@@ -7,7 +7,7 @@ from filtered_data.data_tools import dump_to_csv
 from scraper_tools import get_table_rows, get_table_headers, stripper
 from statistics import mean, median
 from magic_things import MADE, ENTRY_LENGTH
-from static_tools import distribute_data, convert_to_csv_list, check_and_fix_entry
+from static_tools import distribute_data, convert_to_csv_list, check_and_fix_entry, sort_lift_order
 from time import time
 
 
@@ -284,11 +284,26 @@ class DatabaseScraper:
         attempt_dist = distribute_data(percentages)
         # dump_to_csv("third_cj_attempts", convert_to_csv_list(attempt_dist))
 
-    def tester(self):
+    def top_10(self, year: int = None, gender: str = None):
         results_db: list = self.load_results_db()
-        total_time = 0
-        print(results_db[0].full_entry)
+        big_list: list = []
+        for entry in results_db:
+            if year == entry.year and gender == entry.lifter_gender:
+                big_list.append([entry.lifter_name, entry.sinclair])
+        sorted_big_list = sort_lift_order(big_list, reverse=True)
 
+        for _ in range(2):
+            for n_1, x in enumerate(sorted_big_list):
+                for n_2, y in enumerate(sorted_big_list):
+                    if x[0] == y[0] and x[1] >= y[1] and n_1 != n_2:
+                        big_list.pop(n_2)
+        print(f"Top 10 in {year}")
+        for x in range(10):
+            print(sorted_big_list[x])
+
+    def historical_top_10(self, years: list):
+        for year in years:
+            self.top_10(year, "Women's")
 
 if __name__ == '__main__':
     scraper = DatabaseScraper()
@@ -301,4 +316,6 @@ if __name__ == '__main__':
     # scraper.load_results_db()
     # lifts = scraper.top_totals('2021')
     # dump_to_csv("top_totals", lifts)
-    scraper.tester()
+    #scraper.top_10(2021, "Men's")
+    #scraper.top_10(2021, "Women's")
+    scraper.historical_top_10([2017,2018,2019,2020,2021])

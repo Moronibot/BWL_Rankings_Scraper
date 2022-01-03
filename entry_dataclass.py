@@ -17,6 +17,7 @@ class LiftEntry:
         self.total_kg: int = int(entry_line[12])
         self.sinclair: int = int(entry_line[13])
         self.full_entry: list = entry_line
+        self.lifter_gender: str = gender(entry_line[3])
 
     def made_snatches(self) -> tuple:
         made_snatches: list = strip_missed_lifts(self.snatches)
