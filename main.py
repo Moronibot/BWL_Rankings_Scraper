@@ -25,10 +25,16 @@ class DatabaseScraper:
         self.EVENT_INDEX = "https://bwl.sport80.com/event_results?id_ranking=8"
         self.RESULTS_DB: list = []
 
-    def strip_result_table(self, page_text: str):
-        result_table_id = "ranking-matches"
+    def update_all_db(self):
+        self.create_meets_index_db()
+        self.check_index_db()
+        self.create_results_db()
+        self.check_results_db()
+
+    @staticmethod
+    def strip_result_table(page_text: str, table_id="ranking-matches"):
         soup = BeautifulSoup(page_text, "html.parser")
-        result_table = soup.find("table", id=result_table_id)
+        result_table = soup.find("table", id=table_id)
         # table_headers = get_table_headers(result_table)
         table_rows = get_table_rows(result_table)
         # table_rows.insert(0, table_headers)
@@ -167,15 +173,17 @@ class DatabaseScraper:
                 if len(rows) != 5:
                     print(rows)
 
-    def single_lifter_results(self, lifter_name: str, year: str):
+    def single_lifter_results(self, lifter_name: str, year: list):
         results_db: list = self.load_results_db()
-        lifter_results: list = []
+        lifter_results: dict = {}
+        year = sorted(year, reverse=False)
+        sinclair: list = [lifter_name]
         for entry in results_db:
-            if year in entry.date and lifter_name in entry.lifter_name:
-                made_snatches, best_snatch = entry.made_snatches()
-                made_cj, best_cj = entry.made_cleanjerks()
-                lifter_results.append([entry.date, made_snatches, made_cj, entry.overall_lift_percentage(),
-                                       best_snatch, best_cj, entry.total_kg, entry.sinclair])
+            for yr in year:
+                if yr == entry.year and lifter_name in entry.lifter_name:
+                    sinclair.append(entry.sinclair)
+        #lifter_results[lifter_name] = sinclair
+        return sinclair
         # lifter_filename = self.gen_filename(lifter_name, year)
         # self.write_lifter_db(lifter_filename, lifter_results)
 
@@ -300,10 +308,14 @@ class DatabaseScraper:
         print(f"Top 10 in {year}")
         for x in range(10):
             print(sorted_big_list[x])
+        dump_to_csv(f"top10_women_{year}", sorted_big_list[:10:])
 
     def historical_top_10(self, years: list):
         for year in years:
             self.top_10(year, "Women's")
+
+    def best_lifter_sinclair(self, name: str, year: int):
+        pass
 
 if __name__ == '__main__':
     scraper = DatabaseScraper()
